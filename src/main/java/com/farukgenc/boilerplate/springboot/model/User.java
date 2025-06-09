@@ -34,4 +34,7 @@ public class User {
 	@Enumerated(EnumType.STRING)
 	private UserRole userRole;
 
+	@Column(name = "previous_message_hash", nullable = true)
+	private String previousMessageHash;
+
 }

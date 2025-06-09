@@ -15,6 +15,15 @@ spring:
       properties:
         hibernate.use_sql_comments: true
         hibernate.format_sql: true
+  kafka:
+    bootstrap-servers: localhost:9092 # Default, can be changed
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false # To avoid adding __TypeId__ headers
+    template:
+      default-topic: user-events # Default topic, can be changed
 
 springdoc:
   show-actuator: true
